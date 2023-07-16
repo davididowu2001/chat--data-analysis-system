@@ -1,0 +1,77 @@
+<!-- example file - can be gotten rid of was used for testing database was working  -->
+<!DOCTYPE html>
+
+<html lang="en">
+  <head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/general.css">
+  </head>
+  <body>
+    <!-- Make-IT-All logo --> 
+	<div id="banner"><img src="pages/makeitallLogo.png"></div>
+	<!-- Container for web page contents -->
+    <div class="container">
+		<!-- Wrapper to contain form contents -->
+		<div class="wrapper">
+			<!-- Title of form -->
+			<div class="title"><span>Login</span></div>
+			<br>
+			<div class= "desc">
+			Please enter your registered email and password to login.
+			</div>
+			<!-- Error message -->
+			<div align="center" style = "color: #cc3300; font-size: 13px;" >
+			<?php if ($msg != "") echo $msg . "<br>"; ?>
+			</div>
+			<!-- Form -->
+			<form class = "login-form">
+			  <div class="row">
+				<input type="text" name="email" placeholder="Email" id="username" maxlength="80" required>
+			  </div>
+			  <div class="row">
+				<input type="password" name="password" placeholder="Password" id="password" maxlength="100" required>
+			  </div>
+			  <div class="row">
+			  <a href="http://localhost:3000/pages/ForgotPsw.html" style="color: #bc8128; float: right;">Forgot password?</a>
+			  </div>
+			  <div class="row">
+			  <div class="row button">
+				<input type="submit" name = "submit" value="Login" id="login-form-submit">
+			  </div>
+			</form>
+      </div>
+    </div>
+    <script type="module">
+      import { checkLogin, verifyLogin } from '/js/test.js';
+  
+      async function main() {
+        const login = await checkLogin();
+        console.log('Collected Login:' + login);
+
+        const form = document.getElementById('login-form-submit');
+  
+        form.addEventListener('submit', event => {
+          console.log('Entered username:' + document.getElementById('username'));
+          event.preventDefault();
+          const usernameInput = document.getElementById('username');
+          const passwordInput = document.getElementById('password');
+          const username = usernameInput.value;
+          const password = passwordInput.value;
+          console.log('clicked');
+  
+          if (verifyLogin(username, password, login)) {
+            console.log('Login successful!');
+            window.location.href='http://localhost:3000/pages/Dashboard.html';
+          } else {
+            console.log('Login failed. Invalid username or password.');
+            // Display error message or perform other actions here
+          }
+        });
+      }
+  
+      main();
+    </script>
+  </body>
+</html>

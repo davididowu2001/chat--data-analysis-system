@@ -1,0 +1,238 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  background-color: #FED96A;
+}
+.container{
+  max-width: 440px;
+  padding: 0 8px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height:60%;
+}
+.wrapper{
+  width: 100%;
+  background: white;
+  border-radius: 5px;
+  margin: 50px auto;
+  box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.5);
+}
+.wrapper .title{
+  height: 80px;
+  color: white;
+  background: black;
+  border-radius: 5px 5px 0 0;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form{
+  padding: 5px 20px 20px 20px;
+}
+.wrapper form .row{
+	padding-top: 3px;
+  height: 43px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.wrapper form .row input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+form .row input:focus{
+	border: 1px solid #fec107;
+}
+form .row input::placeholder{
+  color: #999;
+}
+.wrapper form .row i{
+  position: absolute;
+  width: 47px;
+  height: 100%;
+  color: #fff;
+  font-size: 18px;
+  background: #16a085;
+  border: 1px solid #16a085;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form .pass{
+  margin: -8px 0 20px 0;
+}
+.wrapper form .pass a{
+  color: #16a085;
+  font-size: 17px;
+  text-decoration: none;
+}
+.wrapper form .pass a:hover{
+  text-decoration: underline;
+}
+.wrapper form .button input{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background: black;
+  cursor: pointer;
+}
+form .button input:hover{
+  background-color: #bc8128;
+  color: black;
+}
+
+.desc {
+	padding: 10px 10px 10px 25px;
+	content: center;
+}
+
+#banner {
+	padding-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	content: center;
+  background-position: center;
+  float: middle;
+  background-size: cover;
+  width: 40%;
+  min-width: 400px;
+  height: 30%;
+}
+#banner img{
+	display:block;
+	position: relative;
+	margin-left:auto;
+	margin-right:auto;
+	max-height: 100%;
+	max-width: 100%;
+
+}
+
+#login-error-msg-holder{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+  
+#login-error-msg{
+    width: 60%;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8a0000;
+    border: 1px solid #8a0000;
+    background-color: #e58f8f;
+    opacity: 0;
+}
+
+li, a, button {
+	font-weight:500;
+	font-size: 16px;
+	color: #edf0f1;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 5%;
+	max-height: 100%; 
+	background-color: #fcd65d;
+}
+.logo {
+	cursor: pointer;
+	display:block;
+	position: relative;
+	max-height: 100%;
+	max-width: 100%;
+	height: 50px;
+}
+
+.nav_links {
+	list-style:none;
+}
+
+.nav_links li {
+	display: inline-block;
+	padding: 0px 20px;
+}
+
+.nav_links li a {
+	transition: all 0.2s ease 0s;
+	color: black;
+	text-decoration: none;
+}
+
+.nav_links li a:hover {
+	color: #bc8128;
+	text-decoration: none;
+}
+
+.logoutBtn {
+	padding: 9px 25px;
+	background-color: black;
+	color: white;
+	border:none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition:all 0.2s ease 0s;
+}
+
+.logoutBtn:hover {
+	background-color: #bc8128;
+	color: black;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.profileInfo { 
+display: block; 
+padding: 25px;
+}
+
+.profileInfo .row { padding: 10px;}
+
+.profileBtns {
+	display: flex;
+	flex-wrap: wrap;
+	padding:10px;
+	justify-content: center;
+    align-items: center;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 1080px) {
+	.header { align-items: center; margin-left: auto; justify-content: none;
+	  margin-right: auto;}
+  .topnav {
+	  display:block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  align-items: center;
+  }
+  .nav_links li {
+	display: block;
+	padding: 5px 20px;
+}
+  
+}

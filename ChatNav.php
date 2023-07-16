@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chats</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="General.css">
+    <link rel="stylesheet" href="Chat.css">
+  </head>
+  <body>
+  <!-- Adds Navbar-->
+	<?php include 'Navbar.php';?>
+	<div class="page-content">
+	
+	<div class="content">
+	<div class="container-fluid mt-5 px-auto" style="width:80%;">
+		<!-- Title -->
+    <div class="container px-auto pb-2">
+        <p class="title h1 text-center">Chats</p>
+    </div>
+	<button type="button" class="btn btn-outline-dark newChatBtn">&#10010; New Chat</button>
+	<br><br>
+            <!-- Search bar-->
+			<div class="input-group mt-2">
+			  <div class="input-group-prepend">
+				<span class="input-group-text searchLbl" id="inputGroup-sizing-default">Search</span>
+			  </div>
+			  <input type="text" id="searchInput" class="form-control searchTxt shadow-none" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+			</div>
+
+            <!-- Filters-->
+            <nav class="navbar">
+                <div class="container-fluid mt-2">
+                    <div class="text-middle filterOpt">
+                        <button type="button" id="RecentFilter" name="Recent" class="btn btn-outline-dark" onclick="technNontechToggle('non_technical', 'none');technNontechToggle('technical', 'block');toggling('showButton')">Recent</button>
+                        <button type="button" id="UnreadFilter" name="Unread" class="btn btn-outline-dark" onclick="technNontechToggle('technical','none');technNontechToggle('non_technical', 'block');toggling('showButton')">Unread</button>
+                        <button type="button" id="AlphabeticalFilter" name="Alphabetical" class="btn btn-outline-dark" onclick="technNontechToggle('technical','none');technNontechToggle('non_technical', 'block');toggling('showButton')">Alphabetical</button>
+                    </div>
+                </div>          
+            </nav>
+
+            <!-- Forum Posts-->
+            <div class="container-fluid mt-2 " id="posts">
+                <ul class="userPosts" id="userPosts">
+                    <!-- <?php //echo getPosts(0, $_SESSION['user'], true)?> -->
+                </ul>
+            </div>
+            <div class="container-fluid mt-2" id="technical_results">
+
+            <!-- Page Numbers -->
+            <div class="container-fluid mt-2">
+                <nav aria-label="Knowledge subsystem Navigation">
+                    <ul class="pagination justify-content-center" id="pagination"></ul>
+                </nav>
+            </div>
+            
+        </div>
+    </div>
+	</div>
+  
+  </body>
+</html>
